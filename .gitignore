@@ -59,3 +59,11 @@ typings/
 
 # next.js build output
 .next
+
+
+#unwanted files
+package-lock.json
+
+#private-files
+/server/config.json
+/db/datastore.db

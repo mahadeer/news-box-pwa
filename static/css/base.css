@@ -1,0 +1,25 @@
+.footer-spans span {
+    margin:  5px;
+}
+
+.text-muted.active,
+.dropdown-item.active,
+.dropdown-item:active {
+    background:#029e74;
+    border-color:#029e74;
+    color:#fff!important;
+    border-radius: 25px;
+}
+
+.card {
+    margin: 10px 10px 20px 10px;
+    display: inline-block;
+}
+
+.card:hover {
+    opacity: 0.8;
+}
+
+.card a:hover {
+    text-decoration: none;
+}

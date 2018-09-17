@@ -1,0 +1,7 @@
+{
+    "dbName": "NewsAPIFeeds",
+    "isDbAvailable": "SELECT COUNT() as Count FROM sqlite_master WHERE type='table' AND name = '{dbName}';",
+    "createTable": "CREATE TABLE {dbName} (FETCH_ID INTEGER PRIMARY KEY AUTOINCREMENT, FETCH_DATE DATE NOT NULL, FETCH_TIME TIME NOT NULL, FETCH_TYPE VARCHAR (200) NOT NULL, FETCH_RESULT VARCHAR (99999999) NOT NULL );",
+    "getNewsSync": "SELECT FETCH_RESULT as stories FROM {dbName} where FETCH_DATE='{date}' AND FETCH_TIME='{timeSpan}' AND FETCH_TYPE = '{type}'",
+    "insertNewsSync": "INSERT INTO {dbName} (FETCH_DATE,FETCH_TIME,FETCH_RESULT, FETCH_TYPE)  SELECT '{date}','{timeSpan}','{stories}', '{type}' WHERE NOT EXISTS(SELECT 1 from {dbName} WHERE FETCH_DATE = '{date}' AND FETCH_TIME = '{timeSpan}');"
+}
