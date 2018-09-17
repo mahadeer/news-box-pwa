@@ -1,0 +1,22 @@
+{
+    "base": "https://newsapi.org",
+    "endpoint": {
+        "everything": "/v2/everything",
+        "top-headlines": "/v2/top-headlines",
+        "sources": "/v2/sources"
+    },
+    "params": {
+        "country": "country",
+        "category": "category",
+        "search": "q",
+        "pageSize": "pageSize",
+        "page": "page",
+        "language": "language",
+        "sortBy": "sortBy"
+    },
+    "db": {
+        "fileName": "./db/{FILENAME}.db"
+    },
+    "API_KEY": "{YOUR_API_KEY}",
+    "PORT": 3000
+}
