@@ -1,6 +1,7 @@
-const Store = {
-    pageStatus: require("./PageStatus").NotRendered,
-    foo: ""
-}
+import * as PageStatus from "./PageStatus";
 
-module.exports = Store;
+export const State = {
+    pageStatus: PageStatus.NotRendered,
+    stories: [],
+    section: "top-headlines"
+}

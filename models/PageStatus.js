@@ -1,7 +1,5 @@
-module.exports = {
-    NotRendered: 0,
-    Rendered: 1,
-    Updating: 2,
-    Loading: 3,
-    Error: 4
-}
+export const NotRendered = 0;
+export const Rendered = 1;
+export const Updating = 2;
+export const Loading = 3;
+export const Error = 4;

@@ -1,21 +1,7 @@
-const createStore = require("redux").createStore;
-const initialState = require("../models/Store");
-const models = require("../models");
-const Actions = require("./Actions");
+import { createStore } from "redux";
+import { State } from "../models/Store";
+import { rootReducers } from "./reducers";
 
-const storeReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case Actions.SET_PAGE_STATUS:
-            return Object.assign({}, { ...state, pageStatus: action.payload });
-        case 'FOO':
-            return { ...state, foo: action.payload };
-        default:
-            return state;
-    }
+export const makestore = (defaultState = State, options) => {
+    return createStore(rootReducers, defaultState);
 }
-
-const makeStore = (initialState = initialState, options) => {
-    return createStore(storeReducer, initialState);
-}
-
-module.exports = makeStore;

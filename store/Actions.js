@@ -1,4 +1,4 @@
-module.exports = {
-    SET_PAGE_STATUS: "SET_PAGE_STATUS",
-
-}
+export const SET_PAGE_STATUS = "SET_PAGE_STATUS";
+export const LOAD_NEWS_STORIES = "LOAD_NEWS_STORIES";
+export const UPDATE_NEWS_STORIES = "UPDATE_NEWS_STORIES";
+export const SET_ACTIVE_SECTION = "SET_ACTIVE_SECTION";
