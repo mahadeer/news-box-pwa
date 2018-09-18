@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from "next/document";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default class extends Document {
     static async getInitialProps(ctx) {
@@ -29,8 +28,7 @@ export default class extends Document {
                     {/* <link rel="stylesheet" href="/static/libs/salvattore.css" /> */}
                 </Head>
                 <body>
-                    <Header />
-                    <div className="container mt-5">
+                    <div className="container">
                         <Main />
                     </div>
                     <Footer />

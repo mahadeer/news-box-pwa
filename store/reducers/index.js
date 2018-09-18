@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 import * as PageStatus from "../../models/PageStatus";
-import * as Actions from "../Actions";
+import { SET_PAGE_STATUS, UPDATE_NEWS_STORIES, SET_ACTIVE_SECTION } from "../Actions";
+import * as config from "../../server/config";
 
 const pageStatusReducer = (state = PageStatus.NotRendered, action) => {
     switch (action.type) {
-        case Actions.SET_PAGE_STATUS:
+        case SET_PAGE_STATUS:
             return action.payload;
         default:
             return state;
@@ -13,7 +14,7 @@ const pageStatusReducer = (state = PageStatus.NotRendered, action) => {
 
 const storiesReducer = (state = [], action) => {
     switch (action.type) {
-        case Actions.UPDATE_NEWS_STORIES:
+        case UPDATE_NEWS_STORIES:
             return action.payload;
         default:
             return state;
@@ -22,8 +23,15 @@ const storiesReducer = (state = [], action) => {
 
 const sectionReducer = (state = "", action) => {
     switch (action.type) {
-        case Actions.SET_ACTIVE_SECTION:
+        case SET_ACTIVE_SECTION:
             return action.payload;
+        default:
+            return state;
+    }
+}
+
+const sourcesReducer = (state = config.sources, action) => {
+    switch (action.type) {
         default:
             return state;
     }
@@ -32,5 +40,6 @@ const sectionReducer = (state = "", action) => {
 export const rootReducers = combineReducers({
     pageStatus: pageStatusReducer,
     stories: storiesReducer,
-    section: sectionReducer
+    section: sectionReducer,
+    sources: sourcesReducer
 });

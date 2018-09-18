@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as Pagestatus from "../models/PageStatus";
-import * as Actions from "../store/Actions";
+import { Dispatches } from "../store/Actions";
 
 class Page extends Component {
     componentDidMount() {
         this.props.updatePageStatus(Pagestatus.Rendered);
     }
-    
+
     render() {
         return (
             <div className="container">
@@ -21,6 +21,9 @@ class Page extends Component {
     }
 }
 
-export default connect(state => state, (dispatch) => ({
-    updatePageStatus: (payload) => dispatch({ type: Actions.SET_PAGE_STATUS, payload: payload })
-}))(Page);
+export default connect(
+    state => ({ section: state.section, pageStatus: state.pageStatus }),
+    (dispatch) => ({
+        updatePageStatus: (payload) => dispatch(Dispatches.SET_PAGE_STATUS(payload))
+    })
+)(Page);

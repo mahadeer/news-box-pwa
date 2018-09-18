@@ -4,6 +4,7 @@ import withRedux from "next-redux-wrapper";
 import { SET_PAGE_STATUS } from "../store/Actions";
 import * as PageStatus from "../models/PageStatus";
 import { makestore } from "../store/Store";
+import Header from "../components/Header";
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -20,7 +21,10 @@ class MyApp extends App {
         return (
             <Container>
                 <Provider store={store}>
-                    <Component {...pageProps} />
+                    <>
+                        <Header />
+                        <Component {...pageProps} />
+                    </>
                 </Provider>
             </Container>
         );
