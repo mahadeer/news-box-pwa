@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default class extends React.Component {
     render() {
         return (
@@ -5,12 +7,16 @@ export default class extends React.Component {
                 <header className="blog-header py-3 container">
                     <div className="row flex-nowrap justify-content-between align-items-center">
                         <div className="col-4 d-none d-md-block pt-1">
-                            <a className="text-muted" href="#">
-                                <b>NBox</b>
-                            </a>
+                            <Link href="/">
+                                <a className="text-muted">
+                                    <b>NBox</b>
+                                </a>
+                            </Link>
                         </div>
                         <div className="col-12 col-md-4 text-center">
-                            <a className="blog-header-logo text-dark" href="/">News Box</a>
+                            <Link href="/">
+                                <a className="blog-header-logo text-dark">News Box</a>
+                            </Link>
                         </div>
                         <div className="col-3 d-none d-md-block">
                             <ul className="nav justify-content-end">

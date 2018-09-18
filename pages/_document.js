@@ -3,11 +3,15 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default class extends Document {
+    static async getInitialProps(ctx) {
+        const initialProps = await Document.getInitialProps(ctx)
+        return { ...initialProps }
+    }
     render() {
         return (
             <html lang="en">
                 <Head>
-                    <title>Seithi Petti</title>
+                    <title>News Box</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" key="viewport" />
                     <meta charSet="utf-8"></meta>
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -22,7 +26,7 @@ export default class extends Document {
                     <link rel="stylesheet" href="/static/libs/bootstrap/bootstrap.min.css" />
                     <link rel="stylesheet" href="/static/css/base.css" />
                     <link rel="stylesheet" href="/static/css/blog.css" />
-                    <link rel="stylesheet" href="/static/libs/salvattore.css" />
+                    {/* <link rel="stylesheet" href="/static/libs/salvattore.css" /> */}
                 </Head>
                 <body>
                     <Header />
@@ -30,12 +34,13 @@ export default class extends Document {
                         <Main />
                     </div>
                     <Footer />
-                    {/* <NextScript /> */}
+                    
                     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
-                    <script type="text/javascript" src="/static/libs/salvattore.min.js"></script>
+                    {/* <script type="text/javascript" src="/static/libs/salvattore.min.js"></script> */}
                     <script type="text/javascript" src="/static/libs/jquery-3.2.1.slim.min.js"></script>
                     <script type="text/javascript" src="/static/libs/popper.min.js"></script>
                     <script type="text/javascript" src="/static/libs/bootstrap/bootstrap.min.js"></script>
+                    <NextScript />
                 </body>
             </html>
         );
