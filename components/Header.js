@@ -40,7 +40,7 @@ const Header = (props) => {
                     <div className="offset-1 d-none d-md-block"></div>
                 </div>
             </header>
-            <div className="nav-scroller py-1 mb-5 mt-3 container d-block d-sm-none">
+            <div className="nav-scroller py-1 mb-3 mt-3 container d-block d-sm-none">
                 <nav className="nav d-flex justify-content-between">
                     {props.sources.map(src => {
                         return (<button type="button" className={`p-2 text-muted ${props.section === src.key ? 'active' : ''}`}

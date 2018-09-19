@@ -8,8 +8,9 @@ export const Dispatches = {
         type: SET_PAGE_STATUS,
         payload: payload
     }),
-    LOAD_NEWS_STORIES: () => ({
-        type: LOAD_NEWS_STORIES
+    LOAD_NEWS_STORIES: (sectionName) => ({
+        type: LOAD_NEWS_STORIES,
+        payload: sectionName
     }),
     UPDATE_NEWS_STORIES: (payload) => ({
         type: UPDATE_NEWS_STORIES,

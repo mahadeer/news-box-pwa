@@ -17,17 +17,16 @@ class HomeComponent extends React.Component {
     render() {
         return (
             <div className="news-container">
-                <h3 className="h3">
+                <h5 className="h5">
                     Trending News -&nbsp;
                     <small className="text-muted">
                         {getSectionText(this.props.sources, this.props.section)}
                     </small>
-                </h3>
+                </h5>
                 <br />
                 {((status) => {
                     switch (status) {
                         case PageStatus.Rendered:
-                        case PageStatus.Updating:
                             return (
                                 <div id="stories" className="row mb-2" data-columns>
                                     {this.props.stories.map(((story, index) => <StoryCard story={story} key={`${index}-${story.source.name}`} />))}
@@ -35,6 +34,8 @@ class HomeComponent extends React.Component {
                             );
                         case PageStatus.Loading:
                             return <Loader />;
+                        case PageStatus.Error:
+                            return <h3>Error</h3>;
                         default:
                             return null;
                     }
