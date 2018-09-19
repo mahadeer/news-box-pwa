@@ -25,6 +25,7 @@ export default class extends Document {
                     <link rel="stylesheet" href="/static/libs/bootstrap/bootstrap.min.css" />
                     <link rel="stylesheet" href="/static/css/base.css" />
                     <link rel="stylesheet" href="/static/css/blog.css" />
+                    <link rel="stylesheet" href="/static/css/loader.css" />
                     {/* <link rel="stylesheet" href="/static/libs/salvattore.css" /> */}
                 </Head>
                 <body>
