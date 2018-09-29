@@ -5,6 +5,7 @@ import { SET_PAGE_STATUS } from "../store/Actions";
 import * as PageStatus from "../models/PageStatus";
 import { makestore } from "../store/Store";
 import Header from "../components/Header";
+import OfflineSupport from "../components/OfflineSupport";
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -22,6 +23,7 @@ class MyApp extends App {
             <Container>
                 <Provider store={store}>
                     <>
+                        <OfflineSupport />
                         <Header />
                         <Component {...pageProps} />
                     </>

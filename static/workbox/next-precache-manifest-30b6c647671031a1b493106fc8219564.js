@@ -1,0 +1,1 @@
+self.__precacheManifest = ["/_next/cf947082-400f-4ff3-82a0-0cc114ec4194/page/_app.js","/_next/cf947082-400f-4ff3-82a0-0cc114ec4194/page/_document.js","/_next/cf947082-400f-4ff3-82a0-0cc114ec4194/page/_error.js","/_next/cf947082-400f-4ff3-82a0-0cc114ec4194/page/about.js","/_next/cf947082-400f-4ff3-82a0-0cc114ec4194/page/index.js"]
