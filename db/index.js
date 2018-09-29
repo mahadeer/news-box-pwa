@@ -38,22 +38,28 @@ const DbService = {
             });
         });
     },
-    GetTopHeadlines: () => {
+    GetTopNewsBySubCategory: (subCat) => {
         return new Promise((resolve, reject) => {
-            db.get(qBuilder.GetTopHeadlinesQuery(), [], (err, row) => {
+            db.get(qBuilder.GetTopNewsBySubCategoryQuery(subCat), [], (err, row) => {
                 if (err) {
                     reject(err);
                 } else if (row === undefined) {
-                    resolve({ isAvailable: false, records: [] });
+                    resolve({
+                        isAvailable: false,
+                        records: []
+                    });
                 } else {
-                    resolve({ isAvailable: true, records: qBuilder.ParseAsJson(row.stories) });
+                    resolve({
+                        isAvailable: true,
+                        records: qBuilder.ParseAsJson(row.stories)
+                    });
                 }
             });
         });
     },
-    SyncNews: (stories) => {
+    SyncNews: (stories, subCat) => {
         return new Promise((resolve, reject) => {
-            db.run(qBuilder.SyncNewsToDb(qBuilder.ConvertToText(stories.articles)), (err) => {
+            db.run(qBuilder.SyncNewsToDb(qBuilder.ConvertToText(stories.articles), subCat), (err) => {
                 if (err) {
                     reject(err);
                 } else {

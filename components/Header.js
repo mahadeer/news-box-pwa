@@ -1,44 +1,65 @@
-export default class extends React.Component {
-    render() {
-        return (
-            <>
-                <header className="blog-header py-3 container">
-                    <div className="row flex-nowrap justify-content-between align-items-center">
-                        <div className="col-4 d-none d-md-block pt-1">
-                            <a className="text-muted" href="#">
+import Link from 'next/link';
+import { connect } from "react-redux";
+import { Dispatches } from "../store/Actions";
+import { getSectionText } from "../utils/UIHelpers";
+
+const Header = (props) => {
+    return (
+        <>
+            <header className="blog-header py-3 mb-3">
+                <div className="row flex-nowrap justify-content-between align-items-center">
+                    <div className="col-4 d-none d-md-block pt-1">
+                        <Link href="/">
+                            <a className="text-muted">
                                 <b>NBox</b>
                             </a>
-                        </div>
-                        <div className="col-12 col-md-4 text-center">
-                            <a className="blog-header-logo text-dark" href="/">News Box</a>
-                        </div>
-                        <div className="col-3 d-none d-md-block">
-                            <ul className="nav justify-content-end">
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle text-muted" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                        Top Headlines
-                                    </a>
-                                    <div className="dropdown-menu">
-                                        <a className="dropdown-item active" href="#">Top Headlines</a>
-                                        <a className="dropdown-item" href="#">Technology</a>
-                                        <a className="dropdown-item" href="#">Politics</a>
-                                        <a className="dropdown-item" href="#">Entertainment</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="offset-1 d-none d-md-block"></div>
+                        </Link>
                     </div>
-                </header>
-                <div className="nav-scroller py-1 mb-2 mt-2 container d-block d-sm-none">
-                    <nav className="nav d-flex justify-content-between">
-                        <a className="p-2 text-muted active" href="#">Top Headlines</a>
-                        <a className="p-2 text-muted" href="#">Technology</a>
-                        <a className="p-2 text-muted" href="#">Politics</a>
-                        <a className="p-2 text-muted" href="#">Entertainment</a>
-                    </nav>
+                    <div className="col-12 col-md-4 text-center">
+                        <Link href="/">
+                            <a className="blog-header-logo text-dark">News Box</a>
+                        </Link>
+                    </div>
+                    <div className="col-3 d-none d-md-block">
+                        <ul className="nav justify-content-end">
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle text-muted" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    {getSectionText(props.sources, props.section)}
+                                </a>
+                                <div className="dropdown-menu">
+                                    {props.sources.map(src => {
+                                        return (<button type="button" className={`dropdown-item ${props.section === src.key ? 'active' : ''}`}
+                                            onClick={() => props.setActiveSection(src.key)} key={src.key}>
+                                            {src.text}
+                                        </button>);
+                                    })}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="offset-1 d-none d-md-block"></div>
                 </div>
-            </>
-        );
-    }
+            </header>
+            <div className="nav-scroller py-1 mb-3 mt-3 container d-block d-sm-none">
+                <nav className="nav d-flex justify-content-between">
+                    {props.sources.map(src => {
+                        return (<button type="button" className={`p-2 text-muted ${props.section === src.key ? 'active' : ''}`}
+                            onClick={() => props.setActiveSection(src.key)} key={src.key}>
+                            {src.text}
+                        </button>);
+                    })}
+                </nav>
+            </div>
+        </>
+    );
 }
+
+export default connect(
+    state => ({
+        sources: state.sources,
+        section: state.section
+    }),
+    (dispatch) => ({
+        setActiveSection: (payload) => dispatch(Dispatches.SET_ACTIVE_SECTION(payload))
+    })
+)(Header);

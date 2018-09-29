@@ -60,6 +60,8 @@ typings/
 # next.js build output
 .next
 
+#vscode config
+.vscode
 
 #unwanted files
 package-lock.json
@@ -67,3 +69,4 @@ package-lock.json
 #private-files
 /server/config.json
 /db/datastore.db
+static/workbox/

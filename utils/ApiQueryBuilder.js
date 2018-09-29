@@ -1,9 +1,14 @@
 const config = require("../server/config");
 
 const ApiQueryBuilder = {
-    GetTopHeadLines: () => {
-        return ApiQueryBuilder
-            .AppendAPIKey(`${config.base}${config.endpoint["top-headlines"]}?country=in`);
+    GetTopNewsBySubCategory: (subCat) => {
+        if (subCat == "top-headlines") {
+            return ApiQueryBuilder
+                .AppendAPIKey(`${config.base}${config.endpoint["top-headlines"]}?country=in`);
+        } else {
+            return ApiQueryBuilder
+                .AppendAPIKey(`${config.base}${config.endpoint["sub-category"].replace("{subCat}", subCat)}`);
+        }
     },
     AppendAPIKey: (query) => {
         return `${query}&apiKey=${config.API_KEY}`;

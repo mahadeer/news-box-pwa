@@ -11,8 +11,12 @@
     border-radius: 25px;
 }
 
+.text-muted {
+    background: #fff;
+    border: 0px;
+}
+
 .card {
-    margin: 10px 10px 20px 10px;
     display: inline-block;
 }
 
