@@ -69,3 +69,4 @@ package-lock.json
 #private-files
 /server/config.json
 /db/datastore.db
+static/workbox/

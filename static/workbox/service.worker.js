@@ -13,7 +13,7 @@
 
 importScripts(
   "/static/workbox/workbox-v3.6.2/workbox-sw.js",
-  "/static/workbox/next-precache-manifest-30b6c647671031a1b493106fc8219564.js"
+  "/static/workbox/next-precache-manifest-1b441159480239f657196b3ba3000380.js"
 );
 
 workbox.skipWaiting();
@@ -36,6 +36,10 @@ self.__precacheManifest = [
   {
     "url": "/_next/static/commons/main-389495cf26666582cd38.js",
     "revision": "b2dbe2d81fa030914bc8a99d06dedccc"
+  },
+  {
+    "url": "/_next/static/commons/main-5d3b8b7f2bdfbd634c26.js",
+    "revision": "46a0360f71cd12e02e1a6a32058adb5e"
   },
   {
     "url": "/_next/static/commons/main.js",

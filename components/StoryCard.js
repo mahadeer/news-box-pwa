@@ -7,7 +7,7 @@ export default class extends React.Component {
         return (
             <div className="col-12 col-md-6 col-lg-4">
                 <div className="card flex-md-row mb-4 box-shadow">
-                    {/* <img className="card-img-right flex-auto" alt="" src={this.props.story.urlToImage} data-holder-rendered="true" /> */}
+                    <img className="card-img-right flex-auto" alt="" src={this.props.story.urlToImage} data-holder-rendered="true" />
                     <div className="card-body d-flex flex-column align-items-start">
                         <strong className="d-inline-block mb-2 text-primary">{this.props.story.source.name}</strong>
                         <h3 className="mb-0">
