@@ -13,7 +13,7 @@
 
 importScripts(
   "/static/workbox/workbox-v3.6.2/workbox-sw.js",
-  "/static/workbox/next-precache-manifest-1b441159480239f657196b3ba3000380.js"
+  "/static/workbox/next-precache-manifest-e9a613049e450cef233eea47cc40acd4.js"
 );
 
 workbox.skipWaiting();
@@ -26,36 +26,44 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
+    "url": "/_next/static/icon_128x128.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
+    "url": "/_next/static/icon_144x144.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
+    "url": "/_next/static/icon_144x144.png",
+    "revision": "c064ce01a9d003a4b68667c68a90a992"
+  },
+  {
+    "url": "/_next/static/icon_192x192.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
+    "url": "/_next/static/icon_256x256.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
+    "url": "/_next/static/icon_384x384.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
+    "url": "/_next/static/icon_512x512.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
+    "url": "/_next/static/icon_96x96.ico",
+    "revision": "06c3a14cf05323dcf4e200de07c4da43"
+  },
+  {
     "url": "/_next/static/manifest.json",
-    "revision": "bc8b05319649936ab333e28b57c9748c"
-  },
-  {
-    "url": "/_next/static/commons/main-02533e1965af117b334f.js",
-    "revision": "411f9e4122e9192be9abb81999ef04bc"
-  },
-  {
-    "url": "/_next/static/commons/main-389495cf26666582cd38.js",
-    "revision": "b2dbe2d81fa030914bc8a99d06dedccc"
+    "revision": "d78e6a4d8b5fd0ecca3461d242051b4f"
   },
   {
     "url": "/_next/static/commons/main-5d3b8b7f2bdfbd634c26.js",
     "revision": "46a0360f71cd12e02e1a6a32058adb5e"
-  },
-  {
-    "url": "/_next/static/commons/main.js",
-    "revision": "88f4f0c1974a620bad595e5cb97b52f0"
-  },
-  {
-    "url": "/_next/static/commons/main.js.map",
-    "revision": "2fc04525061dea3b6264ca20e7f5f734"
-  },
-  {
-    "url": "/_next/static/commons/manifest.js",
-    "revision": "93884dc61f2aeb7fe26ef0fe64a3b2a4"
-  },
-  {
-    "url": "/_next/static/commons/manifest.js.map",
-    "revision": "93357a1756f3184da1bff34feecaf7ec"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

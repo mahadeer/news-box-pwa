@@ -14,9 +14,9 @@ export default class extends Document {
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" key="viewport" />
                     <meta charSet="utf-8"></meta>
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                    <meta name="theme-color" content="#ff6600" />
+                    <meta name="theme-color" content="#fff" />
                     <link rel="manifest" href="/_next/static/manifest.json" />
-                    <link rel="icon" href="/static/images/favicon.png" />
+                    <link rel="icon" href="/static/images/favicon.ico" />
                     {/* <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css' />
                     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' /> */}
                     <link rel="stylesheet" href="/static/libs/bootstrap/bootstrap.min.css" />
